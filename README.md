@@ -28,3 +28,5 @@
   - ```sh
     docker-compose exec gatsby bash
     ```
+- phpMyAdmin: [http://localhost:8080](http://localhost:8080)
+  - 

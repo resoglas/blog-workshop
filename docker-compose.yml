@@ -1,5 +1,6 @@
 services:
   db:
+    container_name: "db_blog_workshop"
     build:
       dockerfile: Dockerfile
       context: ${PWD}/docker/db/
@@ -13,6 +14,7 @@ services:
       MARIADB_ROOT_PASSWORD: 'cms_workshop'
 
   pma:
+    container_name: "pma_blog_workshop"
     image: phpmyadmin:latest
     platform: linux/arm64/v8
     ports:
@@ -25,6 +27,7 @@ services:
       PMA_PASSWORD: 'cms_workshop'
 
   strapi:
+    container_name: "strapi_blog_workshop"
     build:
       dockerfile: Dockerfile
       context: ${PWD}/docker/node/
@@ -48,6 +51,7 @@ services:
       - DATABASE_PASSWORD=strapi
 
   wordpress:
+    container_name: "wordpress_blog_workshop"
     image: bitnami/wordpress-nginx:latest
     platform: linux/amd64
     depends_on:
@@ -67,6 +71,7 @@ services:
       - WORDPRESS_PASSWORD=wordpress
 
   nextjs:
+    container_name: "nextjs_blog_workshop"
     build:
       dockerfile: Dockerfile
       context: ${PWD}/docker/node/
@@ -84,6 +89,7 @@ services:
       - NEXT_TELEMETRY_DISABLED=1
 
   gatsby:
+    container_name: "gatsby_blog_workshop"
     build:
       dockerfile: Dockerfile
       context: ${PWD}/docker/node/
