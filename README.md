@@ -3,6 +3,7 @@
 ## Installation
 
 ```sh
+cp strapi/.env.example strapi/.env
 ./start
 ```
 
@@ -29,4 +30,8 @@
     docker-compose exec gatsby bash
     ```
 - phpMyAdmin: [http://localhost:8080](http://localhost:8080)
-  - 
+  - For other clients:
+    - Host: `localhost`
+    - Port: `33306`
+    - Username: `root`
+    - Password: `cms_workshop`

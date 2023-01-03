@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
       context: ${PWD}/docker/db/
     platform: linux/arm64/v8
+    ports:
+      - "33306:3306"
     networks:
       - db-tier
     volumes:
