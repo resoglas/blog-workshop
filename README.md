@@ -3,7 +3,8 @@
 ## Resources
 
 - [Gatsby + Strapi](https://strapi.io/blog/build-a-static-blog-with-gatsby-and-strapi)
-  - [Plugin](https://github.com/gatsby-uc/plugins/tree/main/packages/gatsby-source-strapi)
+  - [API Plugin](https://github.com/gatsby-uc/plugins/tree/main/packages/gatsby-source-strapi)
+  - [S3 Plugin](https://github.com/gatsby-uc/plugins/tree/main/packages/gatsby-source-s3)
 - [Gatsby + Wordpress](https://www.gatsbyjs.com/guides/wordpress)
   - [Plugin](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-wordpress)
 - [Next.js + Strapi](https://strapi.io/blog/build-a-blog-with-next-react-js-strapi)
