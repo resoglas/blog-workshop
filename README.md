@@ -44,6 +44,10 @@ cp strapi/.env.example strapi/.env
     - Port: `33306`
     - Username: `root`
     - Password: `cms_workshop`
+    
+To make a call to an API from within the frontend applications use:
+- `http://wordpress:8080`
+- `http://strapi:1337`
 
 ## Additional resources
 - [Gatsby S3 / CloudFront](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/deploying-to-s3-cloudfront)
