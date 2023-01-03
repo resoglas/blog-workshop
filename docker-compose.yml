@@ -1,0 +1,105 @@
+services:
+  db:
+    build:
+      dockerfile: Dockerfile
+      context: ${PWD}/docker/db/
+    platform: linux/arm64/v8
+    networks:
+      - db-tier
+    volumes:
+      - db-data:/var/lib/mysql
+      - ${PWD}/docker/db/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/
+    environment:
+      MARIADB_ROOT_PASSWORD: 'cms_workshop'
+
+  pma:
+    image: phpmyadmin:latest
+    platform: linux/arm64/v8
+    ports:
+      - "8080:80"
+    networks:
+      - db-tier
+    environment:
+      PMA_HOST: 'db'
+      PMA_USER: 'root'
+      PMA_PASSWORD: 'cms_workshop'
+
+  strapi:
+    build:
+      dockerfile: Dockerfile
+      context: ${PWD}/docker/node/
+    platform: linux/arm64/v8
+    depends_on:
+      - db
+    expose:
+      - "1337"
+    ports:
+      - "8133:1337"
+    command: ["yarn", "develop"]
+    networks:
+      - back-tier
+      - db-tier
+    volumes:
+      - ${PWD}/strapi/:/usr/src/app/
+
+  wordpress:
+    image: bitnami/wordpress-nginx:latest
+    platform: linux/amd64
+    depends_on:
+      - db
+    networks:
+      - db-tier
+    volumes:
+      - ${PWD}/wordpress/:/bitnami/wordpress/
+    ports:
+      - "8132:8080"
+    environment:
+      - WORDPRESS_DATABASE_HOST=db
+      - WORDPRESS_DATABASE_USER=wordpress
+      - WORDPRESS_DATABASE_PASSWORD=wordpress
+      - WORDPRESS_DATABASE_NAME=wordpress
+      - WORDPRESS_USERNAME=wordpress
+      - WORDPRESS_PASSWORD=wordpress
+
+  nextjs:
+    build:
+      dockerfile: Dockerfile
+      context: ${PWD}/docker/node/
+    platform: linux/arm64/v8
+    expose:
+      - "3000"
+    ports:
+      - "8134:3000"
+    command: [ "yarn", "dev" ]
+    networks:
+      - back-tier
+    volumes:
+      - ${PWD}/nextjs/:/usr/src/app/
+    environment:
+      - NEXT_TELEMETRY_DISABLED=1
+
+  gatsby:
+    build:
+      dockerfile: Dockerfile
+      context: ${PWD}/docker/node/
+    platform: linux/arm64/v8
+    expose:
+      - "8000"
+    ports:
+      - "8135:8000"
+    command: ["yarn", "develop", "-H", "0.0.0.0"]
+    networks:
+      - back-tier
+    volumes:
+      - ${PWD}/gatsby/:/usr/src/app/
+    environment:
+      - GATSBY_TELEMETRY_DISABLED=1
+
+volumes:
+  db-data:
+    driver: local
+
+networks:
+  front-tier: {}
+  back-tier: {}
+  db-tier: {}
