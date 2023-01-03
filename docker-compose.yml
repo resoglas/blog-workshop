@@ -41,6 +41,11 @@ services:
       - db-tier
     volumes:
       - ${PWD}/strapi/:/usr/src/app/
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_NAME=strapi
+      - DATABASE_USERNAME=strapi
+      - DATABASE_PASSWORD=strapi
 
   wordpress:
     image: bitnami/wordpress-nginx:latest
