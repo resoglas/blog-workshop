@@ -2,7 +2,8 @@
 
 set -eux -o pipefail
 
-docker-compose run strapi yarn
-docker-compose run nextjs yarn
-docker-compose run gatsby yarn
-docker-compose up -d
+docker compose build --pull
+docker compose run strapi yarn
+docker compose run nextjs yarn
+docker compose run gatsby yarn
+docker compose up -d
