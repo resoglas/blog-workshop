@@ -60,6 +60,7 @@ services:
       - db
     networks:
       - db-tier
+      - back-tier
     volumes:
       - ${PWD}/wordpress/:/bitnami/wordpress/
     ports:
@@ -113,6 +114,5 @@ volumes:
     driver: local
 
 networks:
-  front-tier: {}
   back-tier: {}
   db-tier: {}
