@@ -1,5 +1,14 @@
 # Blog Workshop
 
+## Resources
+
+- [Gatsby + Strapi](https://strapi.io/blog/build-a-static-blog-with-gatsby-and-strapi)
+- [Gatsby + Wordpress](https://www.gatsbyjs.com/guides/wordpress)
+- [Next.js + Strapi](https://strapi.io/blog/build-a-blog-with-next-react-js-strapi)
+- [Next.js + Wordpress](https://github.com/colbyfayock/next-wordpress-starter)
+
+Headless Wordpress setups require [WPGraphQL](https://www.wpgraphql.com) plugin for both Next.js and Gatsby.
+
 ## Installation
 
 ```sh
@@ -35,3 +44,8 @@ cp strapi/.env.example strapi/.env
     - Port: `33306`
     - Username: `root`
     - Password: `cms_workshop`
+
+## Additional resources
+- [Gatsby S3 / CloudFront](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/deploying-to-s3-cloudfront)
+- [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/signup) Supports advanced features like SSR, DSG, Image CDN and more.
+- [Wordpress Hosting](https://www.cloudways.com/en/wordpress-hosting.php)
