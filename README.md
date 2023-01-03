@@ -3,7 +3,9 @@
 ## Resources
 
 - [Gatsby + Strapi](https://strapi.io/blog/build-a-static-blog-with-gatsby-and-strapi)
+  - [Plugin](https://github.com/gatsby-uc/plugins/tree/main/packages/gatsby-source-strapi)
 - [Gatsby + Wordpress](https://www.gatsbyjs.com/guides/wordpress)
+  - [Plugin](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-wordpress)
 - [Next.js + Strapi](https://strapi.io/blog/build-a-blog-with-next-react-js-strapi)
 - [Next.js + Wordpress](https://github.com/colbyfayock/next-wordpress-starter)
 
