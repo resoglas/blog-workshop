@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -eux -o pipefail
+
+docker-compose down -v
+rm -rf wordpress/
+rm -rf gatsby/.cache/
+rm -rf gatsby/node_modules/
+rm -rf nextjs/.next/
+rm -rf nextjs/node_modules/
+rm -rf strapi/.cache/
+rm -rf strapi/dist/
+rm -rf strapi/node_modules/
+./start
