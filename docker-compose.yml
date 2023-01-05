@@ -108,6 +108,7 @@ services:
       - ${PWD}/gatsby/:/usr/src/app/
     environment:
       - GATSBY_TELEMETRY_DISABLED=1
+      - WPGRAPHQL_URL=http://wordpress:8080/graphql
 
 volumes:
   db-data:

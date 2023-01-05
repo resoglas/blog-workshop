@@ -10,14 +10,28 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "description": {
       "type": "text",
-      "maxLength": 80
+      "maxLength": 80,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slug": {
       "type": "uid",
@@ -31,7 +45,12 @@
         "images",
         "files",
         "videos"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "author": {
       "type": "relation",
@@ -51,8 +70,14 @@
         "shared.media",
         "shared.quote",
         "shared.rich-text",
-        "shared.slider"
-      ]
+        "shared.slider",
+        "shared.seo"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
