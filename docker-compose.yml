@@ -72,6 +72,7 @@ services:
       - WORDPRESS_DATABASE_NAME=wordpress
       - WORDPRESS_USERNAME=wordpress
       - WORDPRESS_PASSWORD=wordpress
+      - WORDPRESS_PLUGINS=wp-gatsby,wp-graphql,wordpress-seo,add-wpgraphql-seo
 
   nextjs:
     container_name: "nextjs_blog_workshop"
