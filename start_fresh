@@ -12,3 +12,4 @@ rm -rf strapi/.cache/
 rm -rf strapi/dist/
 rm -rf strapi/node_modules/
 ./start
+git stsadg
