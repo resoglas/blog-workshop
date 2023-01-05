@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eux -o pipefail
+
+docker-compose stop && docker-compose up -d
