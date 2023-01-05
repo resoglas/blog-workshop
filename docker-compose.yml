@@ -91,6 +91,7 @@ services:
       - ${PWD}/nextjs/:/usr/src/app/
     environment:
       - NEXT_TELEMETRY_DISABLED=1
+      - WORDPRESS_GRAPHQL_ENDPOINT=http://wordpress:8080/graphql
 
   gatsby:
     container_name: "gatsby_blog_workshop"
