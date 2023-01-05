@@ -72,7 +72,7 @@ services:
       - WORDPRESS_DATABASE_NAME=wordpress
       - WORDPRESS_USERNAME=wordpress
       - WORDPRESS_PASSWORD=wordpress
-      - WORDPRESS_PLUGINS=wp-gatsby,wp-graphql,wordpress-seo,add-wpgraphql-seo
+      - WORDPRESS_PLUGINS=wp-graphql,wordpress-seo,add-wpgraphql-seo
 
   nextjs:
     container_name: "nextjs_blog_workshop"
@@ -91,6 +91,7 @@ services:
       - ${PWD}/nextjs/:/usr/src/app/
     environment:
       - NEXT_TELEMETRY_DISABLED=1
+      - WORDPRESS_GRAPHQL_ENDPOINT=http://wordpress:8080/graphql
 
   gatsby:
     container_name: "gatsby_blog_workshop"
